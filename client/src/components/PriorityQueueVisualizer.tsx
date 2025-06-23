@@ -30,7 +30,7 @@ export function PriorityQueueVisualizer({ type }: PriorityQueueVisualizerProps) 
   const initializeQueue = async () => {
     try {
       const endpoint = type === 'heap' ? 'heap/create' : 'create';
-      const response = await fetch(`http://localhost:3001/api/priority-queue/${endpoint}/demo`, {
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/priority-queue/${endpoint}/demo`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });
@@ -45,7 +45,7 @@ export function PriorityQueueVisualizer({ type }: PriorityQueueVisualizerProps) 
   const fetchQueueState = async () => {
     try {
       const endpoint = type === 'heap' ? 'heap/demo' : 'demo';
-      const response = await fetch(`http://localhost:3001/api/priority-queue/${endpoint}`);
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/priority-queue/${endpoint}`);
       const data = await response.json();
       setQueueState(data);
     } catch (error) {
@@ -66,7 +66,7 @@ export function PriorityQueueVisualizer({ type }: PriorityQueueVisualizerProps) 
     setLastOperation('enqueue');
     try {
       const endpoint = type === 'heap' ? 'heap/demo/enqueue' : 'demo/enqueue';
-      const response = await fetch(`http://localhost:3001/api/priority-queue/${endpoint}`, {
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/priority-queue/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ value: inputValue.trim(), priority })
@@ -93,7 +93,7 @@ export function PriorityQueueVisualizer({ type }: PriorityQueueVisualizerProps) 
     setLastOperation('dequeue');
     try {
       const endpoint = type === 'heap' ? 'heap/demo/dequeue' : 'demo/dequeue';
-      const response = await fetch(`http://localhost:3001/api/priority-queue/${endpoint}`, {
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/priority-queue/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });
