@@ -28,7 +28,7 @@ export function BinaryTreeVisualizer() {
 
   const initializeTree = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/binary-tree/create/demo', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/binary-tree/create/demo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });
@@ -42,7 +42,7 @@ export function BinaryTreeVisualizer() {
 
   const fetchTreeState = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/binary-tree/demo');
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/binary-tree/demo');
       const data = await response.json();
       setTreeState(data);
     } catch (error) {
@@ -59,7 +59,7 @@ export function BinaryTreeVisualizer() {
     
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:3001/api/binary-tree/demo/insert', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/binary-tree/demo/insert', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ value })
@@ -88,7 +88,7 @@ export function BinaryTreeVisualizer() {
     
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:3001/api/binary-tree/demo/delete', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/binary-tree/demo/delete', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ value })
@@ -117,7 +117,7 @@ export function BinaryTreeVisualizer() {
     
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:3001/api/binary-tree/demo/search', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/binary-tree/demo/search', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ value })
@@ -140,7 +140,7 @@ export function BinaryTreeVisualizer() {
   const handleTraversal = async (type: 'inorder' | 'preorder' | 'postorder') => {
     setIsLoading(true);
     try {
-      const response = await fetch(`http://localhost:3001/api/binary-tree/demo/traversal/${type}`);
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/binary-tree/demo/traversal/${type}`);
       const data = await response.json();
       setTraversalResult({ type, result: data.traversal });
       setMessage(`${type.charAt(0).toUpperCase() + type.slice(1)} traversal completed`);
@@ -153,7 +153,7 @@ export function BinaryTreeVisualizer() {
   const handleClear = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:3001/api/binary-tree/demo/clear', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/binary-tree/demo/clear', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });
