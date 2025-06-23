@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 3001;
 // Define the list of URLs that are allowed to make requests to this server.
 const allowedOrigins = [
   'http://localhost:5173', // Your local React+Vite dev server
-  'https://datastrcuturewebapp.netlify.app/' // **REPLACE THIS** with your actual Netlify URL
+  'https://datastrcuturewebapp.netlify.app' // **REPLACE THIS** with your actual Netlify URL
 ];
 
 const corsOptions = {
