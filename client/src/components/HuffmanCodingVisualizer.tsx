@@ -31,7 +31,7 @@ export function HuffmanCodingVisualizer() {
 
   const initializeHuffman = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/huffman/create/demo', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/huffman/create/demo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });
@@ -52,7 +52,7 @@ export function HuffmanCodingVisualizer() {
     setStep('frequency');
     
     try {
-      const response = await fetch('http://localhost:3001/api/huffman/demo/encode', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/huffman/demo/encode', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: inputText.trim() })
