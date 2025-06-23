@@ -26,7 +26,7 @@ export function StackVisualizer() {
 
   const initializeStack = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/stack/create/demo', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/stack/create/demo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });
@@ -40,7 +40,7 @@ export function StackVisualizer() {
 
   const fetchStackState = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/stack/demo');
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/stack/demo');
       const data = await response.json();
       setStackState(data);
     } catch (error) {
@@ -54,7 +54,7 @@ export function StackVisualizer() {
     setIsLoading(true);
     setLastOperation('push');
     try {
-      const response = await fetch('http://localhost:3001/api/stack/demo/push', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/stack/demo/push', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ value: inputValue.trim() })
@@ -79,7 +79,7 @@ export function StackVisualizer() {
     setIsLoading(true);
     setLastOperation('pop');
     try {
-      const response = await fetch('http://localhost:3001/api/stack/demo/pop', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/stack/demo/pop', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });
@@ -101,7 +101,7 @@ export function StackVisualizer() {
   const handlePeek = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:3001/api/stack/demo/peek');
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/stack/demo/peek');
       const data = await response.json();
       if (data.success) {
         setMessage(data.message);
@@ -118,7 +118,7 @@ export function StackVisualizer() {
     setIsLoading(true);
     setLastOperation('clear');
     try {
-      const response = await fetch('http://localhost:3001/api/stack/demo/clear', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/stack/demo/clear', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });
