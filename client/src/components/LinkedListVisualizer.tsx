@@ -27,7 +27,7 @@ export function LinkedListVisualizer({ type }: LinkedListVisualizerProps) {
 
   const initializeList = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/api/linked-list/${type}/create/demo`, {
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/linked-list/${type}/create/demo`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });
@@ -41,7 +41,7 @@ export function LinkedListVisualizer({ type }: LinkedListVisualizerProps) {
 
   const fetchListState = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/api/linked-list/${type}/demo`);
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/linked-list/${type}/demo`);
       const data = await response.json();
       setListState(data);
     } catch (error) {
@@ -54,7 +54,7 @@ export function LinkedListVisualizer({ type }: LinkedListVisualizerProps) {
     
     setIsLoading(true);
     try {
-      const response = await fetch(`http://localhost:3001/api/linked-list/${type}/demo/append`, {
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/linked-list/${type}/demo/append`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ value: inputValue.trim() })
@@ -79,7 +79,7 @@ export function LinkedListVisualizer({ type }: LinkedListVisualizerProps) {
     
     setIsLoading(true);
     try {
-      const response = await fetch(`http://localhost:3001/api/linked-list/${type}/demo/prepend`, {
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/linked-list/${type}/demo/prepend`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ value: inputValue.trim() })
@@ -104,7 +104,7 @@ export function LinkedListVisualizer({ type }: LinkedListVisualizerProps) {
     
     setIsLoading(true);
     try {
-      const response = await fetch(`http://localhost:3001/api/linked-list/${type}/demo/delete`, {
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/linked-list/${type}/demo/delete`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ value: deleteValue.trim() })
