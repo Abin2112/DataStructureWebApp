@@ -44,7 +44,7 @@ export function HashTableVisualizer({ type }: HashTableVisualizerProps) {
   const initializeHashTable = async () => {
     try {
       const endpoint = type === 'linear-probing' ? 'linear-probing/create' : 'create';
-      const response = await fetch(`http://localhost:3001/api/hash-table/${endpoint}/demo`, {
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/hash-table/${endpoint}/demo`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ size: 8 })
@@ -60,7 +60,7 @@ export function HashTableVisualizer({ type }: HashTableVisualizerProps) {
   const fetchHashTableState = async () => {
     try {
       const endpoint = type === 'linear-probing' ? 'linear-probing/demo' : 'demo';
-      const response = await fetch(`http://localhost:3001/api/hash-table/${endpoint}`);
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/hash-table/${endpoint}`);
       const data = await response.json();
       setHashTableState(data.hashTable);
     } catch (error) {
@@ -74,7 +74,7 @@ export function HashTableVisualizer({ type }: HashTableVisualizerProps) {
     setIsLoading(true);
     try {
       const endpoint = type === 'linear-probing' ? 'linear-probing/demo/set' : 'demo/set';
-      const response = await fetch(`http://localhost:3001/api/hash-table/${endpoint}`, {
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/hash-table/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ key: keyInput.trim(), value: valueInput.trim() })
@@ -101,7 +101,7 @@ export function HashTableVisualizer({ type }: HashTableVisualizerProps) {
     setIsLoading(true);
     try {
       const endpoint = type === 'linear-probing' ? 'linear-probing/demo/get' : 'demo/get';
-      const response = await fetch(`http://localhost:3001/api/hash-table/${endpoint}`, {
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/hash-table/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ key: searchKey.trim() })
@@ -127,7 +127,7 @@ export function HashTableVisualizer({ type }: HashTableVisualizerProps) {
     setIsLoading(true);
     try {
       const endpoint = type === 'linear-probing' ? 'linear-probing/demo/delete' : 'demo/delete';
-      const response = await fetch(`http://localhost:3001/api/hash-table/${endpoint}`, {
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/hash-table/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ key: deleteKey.trim() })
