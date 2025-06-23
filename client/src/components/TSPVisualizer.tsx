@@ -29,7 +29,7 @@ export function TSPVisualizer() {
 
   const initializeTSP = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/tsp/create/demo', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/tsp/create/demo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });
@@ -174,7 +174,7 @@ export function TSPVisualizer() {
     setAnimationStep(0);
 
     try {
-      const response = await fetch(`http://localhost:3001/api/tsp/demo/solve`, {
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/tsp/demo/solve`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ cities, algorithm })
