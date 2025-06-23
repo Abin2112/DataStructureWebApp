@@ -42,7 +42,7 @@ export function GraphVisualizer() {
 
   const initializeGraph = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/graph/create/demo', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/graph/create/demo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ directed: false })
@@ -57,7 +57,7 @@ export function GraphVisualizer() {
 
   const fetchGraphState = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/graph/demo');
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/graph/demo');
       const data = await response.json();
       setGraphState(data.graph);
     } catch (error) {
@@ -70,7 +70,7 @@ export function GraphVisualizer() {
     
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:3001/api/graph/demo/vertex', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/graph/demo/vertex', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ vertex: vertexInput.trim() })
@@ -96,7 +96,7 @@ export function GraphVisualizer() {
     const weight = parseInt(edgeWeight) || 1;
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:3001/api/graph/demo/edge', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/graph/demo/edge', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ from: edgeFrom.trim(), to: edgeTo.trim(), weight })
@@ -123,7 +123,7 @@ export function GraphVisualizer() {
     
     setIsLoading(true);
     try {
-      const response = await fetch(`http://localhost:3001/api/graph/demo/${type}`, {
+      const response = await fetch(`https://datastructurewebapp.onrender.com/api/graph/demo/${type}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ startVertex: traversalStart.trim() })
@@ -148,7 +148,7 @@ export function GraphVisualizer() {
     
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:3001/api/graph/demo/dijkstra', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/graph/demo/dijkstra', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ startVertex: traversalStart.trim() })
