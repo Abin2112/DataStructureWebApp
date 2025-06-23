@@ -28,7 +28,7 @@ export function QueueVisualizer() {
 
   const initializeQueue = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/queue/create/demo', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/queue/create/demo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });
@@ -42,7 +42,7 @@ export function QueueVisualizer() {
 
   const fetchQueueState = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/queue/demo');
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/queue/demo');
       const data = await response.json();
       setQueueState(data);
     } catch (error) {
@@ -56,7 +56,7 @@ export function QueueVisualizer() {
     setIsLoading(true);
     setLastOperation('enqueue');
     try {
-      const response = await fetch('http://localhost:3001/api/queue/demo/enqueue', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/queue/demo/enqueue', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ value: inputValue.trim() })
@@ -81,7 +81,7 @@ export function QueueVisualizer() {
     setIsLoading(true);
     setLastOperation('dequeue');
     try {
-      const response = await fetch('http://localhost:3001/api/queue/demo/dequeue', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/queue/demo/dequeue', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });
@@ -104,7 +104,7 @@ export function QueueVisualizer() {
     setIsLoading(true);
     setLastOperation('clear');
     try {
-      const response = await fetch('http://localhost:3001/api/queue/demo/clear', {
+      const response = await fetch('https://datastructurewebapp.onrender.com/api/queue/demo/clear', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });
